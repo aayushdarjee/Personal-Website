@@ -176,6 +176,73 @@
 
     .btn-ghost:hover { border-color: var(--muted); color: var(--text); }
 
+    .hero-inner {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 4rem;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .hero-content { flex-shrink: 0; }
+
+    .hero-photo-wrap {
+      flex-shrink: 0;
+      text-align: center;
+    }
+
+    .hero-photo-frame {
+      display: inline-block;
+      padding: 12px;
+      background: var(--surface);
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+
+    .hero-photo-frame img {
+      display: block;
+      width: 300px;
+      height: 380px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .hero-hobbies-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-interests {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+
+    .hero-interests span {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      padding: 0.35rem 0.65rem;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner { flex-direction: column; align-items: flex-start; }
+      .hero-photo-wrap { margin-top: 2.5rem; }
+    }
+
     /* ── Sections ── */
     section {
       padding: 7rem 4rem;
@@ -424,14 +491,31 @@
   <section id="hero">
     <div class="hero-grid-bg"></div>
     <div class="hero-glow"></div>
-    <p class="hero-tag">// cs student & developer</p>
-    <h1 class="hero-name">Aayush<br /><em>Darjee</em></h1>
-    <p class="hero-sub">
-      Computer science student at Michigan State University building things at the intersection of software, systems, and design.
-    </p>
-    <div class="hero-cta">
-      <a href="#projects" class="btn-primary">View my work</a>
-      <a href="#contact" class="btn-ghost">Get in touch</a>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <p class="hero-tag">// cs student & developer</p>
+        <h1 class="hero-name">Aayush<br /><em>Darjee</em></h1>
+        <p class="hero-sub">
+          Computer science student at Michigan State University building things at the intersection of software, systems, and design.
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn-primary">View my work</a>
+          <a href="#contact" class="btn-ghost">Get in touch</a>
+        </div>
+      </div>
+      <div class="hero-photo-wrap">
+        <div class="hero-photo-frame">
+          <img src="assets/hero-photo.png" alt="Aayush Darjee" />
+        </div>
+        <p class="hero-hobbies-label">Hobbies</p>
+        <div class="hero-interests">
+          <span>Traveling</span>
+          <span>Basketball</span>
+          <span>Football</span>
+          <span>Pickleball</span>
+          <span>Thrifting</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -448,7 +532,7 @@
           Outside of coursework I tinker with game development, explore machine learning concepts, and try to stay curious about everything from supply chain optimization to chemistry. I believe the best engineers understand more than just code.
         </p>
         <p>
-          Currently looking for internship opportunities for Summer 2025.
+          Currently looking for Software Engineering Internships and Full-Time roles.
         </p>
       </div>
       <div class="reveal">
@@ -467,11 +551,13 @@
         </ul>
         <p style="font-family: var(--mono); font-size: 12px; color: var(--muted); margin: 1.75rem 0 1rem; letter-spacing: 0.06em; text-transform: uppercase;">Interests</p>
         <ul class="skills-list">
+          <li>Software Engineering</li>
+          <li>AI</li>
+          <li>Databases</li>
           <li>Algorithms</li>
           <li>Game Dev</li>
           <li>Machine Learning</li>
           <li>Systems Design</li>
-          <li>Supply Chain</li>
         </ul>
       </div>
     </div>
@@ -485,7 +571,7 @@
 
       <div class="project-card reveal">
         <p class="project-num">001</p>
-        <h3 class="project-title">Spartanoid</h3>
+        <h3 class="project-title">Pong</h3>
         <p class="project-desc">
           A breakout-style arcade game built with C++ and wxWidgets in CLion. Features a live scoreboard, countdown timer, animated paddle and ball physics, and multiple levels. Developed collaboratively via GitLab.
         </p>
@@ -495,7 +581,7 @@
           <span class="tag">CLion</span>
           <span class="tag">GitLab</span>
         </div>
-        <a href="#" class="project-link">↗ View on GitLab</a>
+        <a href="https://gitlab.msu.edu/marlasho/magetron" target="_blank" rel="noopener noreferrer" class="project-link">↗ View on GitLab</a>
       </div>
 
       <div class="project-card reveal">
@@ -510,7 +596,7 @@
           <span class="tag">JavaScript</span>
           <span class="tag">GitHub Pages</span>
         </div>
-        <a href="#" class="project-link">↗ View source</a>
+        <a href="https://github.com/aayushdarjee/Personal-Website" target="_blank" rel="noopener noreferrer" class="project-link">↗ View source</a>
       </div>
 
       <div class="project-card reveal">
@@ -564,9 +650,9 @@
     <h2 class="section-title reveal">Let's work together</h2>
     <p class="reveal">I'm always open to interesting conversations, internship opportunities, or collaborative projects. My inbox is open.</p>
     <div class="contact-links reveal">
-      <a href="mailto:darjeeaa@msu.edu" class="btn-primary">darjeeaa@msu.edu</a>
-      <a href="https://github.com/" target="_blank" class="btn-ghost">GitHub</a>
-      <a href="https://linkedin.com/" target="_blank" class="btn-ghost">LinkedIn</a>
+      <a href="mailto:aayushdarjee@gmail.com" class="btn-primary">aayushdarjee@gmail.com</a>
+      <a href="https://github.com/aayushdarjee" target="_blank" class="btn-ghost">GitHub</a>
+      <a href="https://www.linkedin.com/in/aayush-darjee/" target="_blank" class="btn-ghost">LinkedIn</a>
     </div>
   </section>
 
